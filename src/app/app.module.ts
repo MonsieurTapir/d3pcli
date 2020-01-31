@@ -16,12 +16,17 @@ import { ItemListComponent } from './item-list/item-list.component';
 import {ItemService} from './service/item.service';
 import { BuildListComponent } from './build-list/build-list.component'
 import { BuildDescService } from './service/build-desc.service';
+import { BuildViewComponent } from './build-view/build-view.component';
+import { BuildService } from './service/build.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { SkillService } from './service/skill.service';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ItemListComponent,
-    BuildListComponent
+    BuildListComponent,
+    BuildViewComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +39,10 @@ import { BuildDescService } from './service/build-desc.service';
     MatToolbarModule,
     MatGridListModule,
     MatTableModule,
-    MatRippleModule
+    MatRippleModule,
+    FlexLayoutModule
   ],
-  providers: [ItemService,BuildDescService],
+  providers: [ItemService,BuildDescService,BuildService,SkillService],
   bootstrap: [AppComponent,NavbarComponent]
 })
 export class AppModule { }

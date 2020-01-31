@@ -3,11 +3,12 @@ import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { MatGridList } from '@angular/material';
 import {BuildDesc} from '../model/build-desc'
 import {BuildDescService} from '../service/build-desc.service'
+import {Enums} from '../model/enums'
 
 @Component({
   selector: 'app-build-list',
   templateUrl: './build-list.component.html',
-  styleUrls: ['./build-list.component.css']
+  styleUrls: ['./build-list.component.scss']
 })
 export class BuildListComponent implements OnInit,AfterContentInit {
   builds: BuildDesc[];
@@ -17,10 +18,12 @@ export class BuildListComponent implements OnInit,AfterContentInit {
     xl: 4,
     lg: 3,
     md: 2,
-    sm: 1,
+    sm: 2,
     xs: 1
   }
-  displayedColumns: string[] = ['name', 'className', 'author',  'description', 'addedAt'];
+  classNames = Enums.classNames
+  classImg = Enums.classImg
+  
   constructor(private buildDescService : BuildDescService,private observableMedia: MediaObserver) { }
   ngAfterContentInit() {
     this.observableMedia.media$.subscribe((change: MediaChange) => {

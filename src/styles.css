@@ -1,7 +1,66 @@
 /* You can add global styles to this file, and also import other style files 
 @import '@angular/material/prebuilt-themes/indigo-pink.css';*/
+.center {
+   margin: 0;
+   position: absolute;
+   top: 42%;
+   left: 50%;
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+  }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.container{margin: 0 auto; width:70%;}
+
+.container{margin: 0 auto; margin-top:20px; width:80%;}
+
 .buildCard{margin:10px 10px 10px 10px;}
 .nav-spacer{flex: 1 1}
+.grid-listing{padding-top: 20px;}
+.mat-grid-tile .mat-figure {
+    justify-content: flex-start !important ;
+    align-items: flex-start !important;
+ }
+ .mat-card-content p{
+    font-size: 1em;
+    line-height: 1em;
+    max-height: 4em;
+    min-height: 4em;
+    overflow: hidden;
+    margin-top: 10 ! important;
+ }
+ .mat-card-content{
+     background: linear-gradient(to top, #424242, #ffffff);
+     background-clip: text;
+     color: rgba(0, 0, 0, 0);
+     margin-bottom: 0;
+ }
+ .cube-tile{
+   background: #424242;
+    border-radius: 2%;
+    width: 100px;
+ }
+ .mini-item{
+    border-radius: 50%;
+    background: #6d6d6d;
+    border:solid black 1px;
+ }
+ .build-section{
+    margin-bottom: 0;
+ }
+ .no-pad{
+    padding-left:0!important;
+    padding-right:0!important;
+ }
+ .mat-grid-tile-footer{
+    text-align: center;
+    background-color: #424242;
+ }
+ .item-img{
+    display: block;
+ }
+ .item-container{
+    height:168px;
+    width:82px;
+    padding-left: auto;
+    padding-right: auto;
+ }

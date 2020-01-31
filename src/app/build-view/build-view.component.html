@@ -1,0 +1,76 @@
+<div class="container">
+    <div flex fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="0.5%"  fxLayoutAlign="space-between">
+        
+        <div fxFlex="30">
+            <h3 mat-subheader class="build-section">Items</h3>
+            <mat-card   class="no-pad">
+                <mat-list>
+                <mat-divider></mat-divider>
+                    <mat-list-item class="clickable-list-item" *ngFor="let s of slots">
+                        <mat-divider></mat-divider>
+                        <img matListAvatar src="{{items[build?.items[s]]?.icon}}" class="mini-item">  
+                        <p matLine [ngStyle]="{color:items[build?.items[s]]?.color}">{{items[build?.items[s]]?.name}}</p>
+                        <p matLine>{{s | titlecase}}</p>
+                    </mat-list-item>
+    
+                </mat-list>
+            </mat-card>
+        </div>
+        
+        <div fxFlex="70">
+            <div flex fxLayout="row" fxLayout.lt-lg="column"  fxLayoutWrap fxLayoutGap="0.85%"  fxLayoutAlign="space-between">
+                <div fxFlex="50">
+                    <h3 mat-subheader class="build-section">Kanai's Cube</h3>
+                    <div flex fxLayout="row" fxLayout.lt-lg="column"  fxLayoutWrap fxLayoutGap="0.85%"  fxLayoutAlign="space-around">
+                        <mat-card  class="cube-tile clickable clickable-list-item" *ngFor="let recipient of build?.cubed | keyvalue">
+                                 <div class="item-container"><img class="item-img" src="{{items[recipient.value]?.icon}}"  class="center"></div>
+                                    <mat-card-content [ngStyle]="{color:items[recipient.value]?.color}">
+                                        {{items[recipient.value]?.name}}
+                                    </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+                <div fxFlex="50">
+                    <h3 mat-subheader class="build-section">Legendary Gems</h3>
+                    <div flex fxLayout="row" fxLayout.lt-lg="column"  fxLayoutWrap fxLayoutGap="0.85%"  fxLayoutAlign="space-around">
+                        <mat-card  class="cube-tile clickable clickable-list-item" *ngFor="let recipient of build?.gems | keyvalue">
+                                 <div class="item-container"><img class="item-img" src="{{items[recipient.value]?.icon}}"  class="center"></div>
+                                    <mat-card-content [ngStyle]="{color:items[recipient.value]?.color}">
+                                        {{items[recipient.value]?.name}}
+                                    </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+
+            <div flex fxLayout="row"  fxLayoutWrap fxLayoutGap="0.85%"  fxLayoutAlign="space-between">
+                <div fxFlex="100">
+                    <h3 mat-subheader class="build-section">Active Skills</h3>
+                <mat-card>
+                    <mat-grid-list cols="3" rowHeight="150px" [gutterSize]="'10px'">
+                        <mat-grid-tile class="cube-tile clickable clickable-list-item" *ngFor="let s of skillslots">
+                        <img class="item-img" src="{{skills[build?.skills[s]]?.icon}}"  class="center">
+                            
+                        <mat-grid-tile-footer><div style="width:100%">{{skills[build?.skills[s]]?.name}}</div></mat-grid-tile-footer> 
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </mat-card>
+                </div>
+            </div>
+
+            <div flex fxLayout="row"  fxLayoutWrap fxLayoutGap="0.85%"  fxLayoutAlign="space-between">
+                <div fxFlex="100">
+                    <h3 mat-subheader class="build-section">Passive Skills</h3>
+                <mat-card>
+                    <mat-grid-list cols="4" rowHeight="150px" [gutterSize]="'10px'">
+                        <mat-grid-tile class="cube-tile clickable clickable-list-item" *ngFor="let s of passiveSlots">
+                        <img class="item-img" src="{{skills[build?.skills[s]]?.icon}}"  >
+                            <div style="width:100%">{{skills[build?.skills[s]]?.name}}</div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

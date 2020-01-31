@@ -22,3 +22,16 @@ $candy-app-theme: mat-dark-theme($candy-app-primary, $candy-app-accent, $candy-a
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($candy-app-theme);
+@import '~@angular/material/theming';
+.clickable {
+    cursor: pointer;
+    &:hover {
+      @include mat-elevation(8);
+    }
+  }
+  .clickable-list-item {
+    cursor: pointer;
+    &:hover {
+      background-color:#616161;
+    }
+  }

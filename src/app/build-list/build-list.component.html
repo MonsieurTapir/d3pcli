@@ -1,16 +1,15 @@
-<div class="container">
-  <mat-grid-list cols="4" #grid [gutterSize]="'10px'">
-    <mat-grid-tile *ngFor="let item of builds"  class="buildCard">
-        <mat-card>
+<div class="container grid-listing">
+  <mat-grid-list cols="4" #grid rowHeight="25em" [gutterSize]="'10px'">
+    <mat-grid-tile *ngFor="let item of builds"  >
+        <mat-card class="buildCard clickable" routerLink="{{item.id}}"  matRipple>
+          <div>
           <mat-card-header>
             <mat-card-title>{{item.name}}</mat-card-title>
-            <mat-card-subtitle>{{item.className}} added on {{item.addedAt}} by {{item.author}}</mat-card-subtitle>
+            <mat-card-subtitle><div>{{classNames[item.className]}}</div> <div>added on {{item.addedAt}} by {{item.author}}</div></mat-card-subtitle>
           </mat-card-header> 
-          <img mat-card-image src="https://eu.diablo3.com/static/images/hero/demon-hunter/bg.jpg">
-            <mat-card-content><p>{{item.description}}</p></mat-card-content>
-            <mat-card-actions>
-              <a routerLink="{{item.id}}" mat-button>View</a>
-            </mat-card-actions>
+          <img mat-card-image src="{{classImg[item.className]}}">
+            <mat-card-content ><p>{{item.description}}</p></mat-card-content >
+          </div>
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list >

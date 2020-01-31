@@ -1,7 +1,6 @@
-export class Item {
-    id: number;
+export class Skill {
     name: string;
     url: string;
     icon: string;
-    color: string;
+    id: number;
 }
